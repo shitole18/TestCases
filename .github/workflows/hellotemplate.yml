@@ -14,4 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: echo "Hello world from template."
-    - shell: dir
+    - name: Echo
+      shell: bash
+    - run: |
+      dir
+
