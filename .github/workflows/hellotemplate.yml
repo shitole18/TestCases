@@ -1,0 +1,15 @@
+name: HelloTemplate
+
+on:
+  push:
+    branches: [ main , test]
+  pull_request:
+    branches: [ main, test ]
+
+jobs: 
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: echo "Hello world from template."
+    - uses: ./.github/workflows/MyActions/Hello.yml
