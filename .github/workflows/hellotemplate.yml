@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: echo "Hello world from template."
-    - uses: .\..\github\workflows\MyActions
+    - uses: .\..\.github\workflows\MyActions
