@@ -14,5 +14,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: echo "Hello world from template."
-    - uses: .\..\.github\workflows
-    - uses: ..\.\TestCases\dotnet.yml
+    - uses: ./../.github\workflows
+    - uses: .././action.yml
