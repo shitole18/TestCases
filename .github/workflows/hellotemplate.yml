@@ -1,12 +1,14 @@
-name: HelloTemplate
+name: .Hallu
 
 on:
   push:
-    branches: [ main , test]
+    branches: [ main, test ]
   pull_request:
     branches: [ main, test ]
 
-jobs: 
+jobs:
+  build:
+
     runs-on: windows-latest
 
     steps:
