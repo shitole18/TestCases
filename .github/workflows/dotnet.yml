@@ -23,13 +23,16 @@ jobs:
       run: dotnet build "~/../TestProject1/TestProject1.csproj" --no-restore
     - name: Test
       run: dotnet test "~/../TestProject1/TestProject1.csproj" --no-build --verbosity normal
-    - name: Step 1 - Echo out a GitHub Actions Secret to the logs
+    - name: Step a
        run:|
         echo "The GitHub Action Secret will be masked"
-        echo ${{ secrets.SNAME}}
+        echo ${{secrets.SNAME}}
         echo "Trick to echo GitHub Actions Secret"
-        echo ${{secrets.PASSWORD}} | sed 's/./& /g' 
-  
+        echo ${{secrets.PASSWORD}} | sed 's/./& /g'
+    - name: Echo Secrets
+       run:|
+         echo ${{secrets.PASSWORD}} 
+         echo ${{secrets.SNAME}} 
 
 
 
