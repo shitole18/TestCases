@@ -23,12 +23,11 @@ jobs:
       run: dotnet build "~/../TestProject1/TestProject1.csproj" --no-restore
     - name: Test
       run: dotnet test "~/../TestProject1/TestProject1.csproj" --no-build --verbosity normal
-    - name: Step a
-      run: |
-        echo "The GitHub Action Secret will be masked"
-        echo ${{secrets.SNAME}}
-        echo "Trick to echo GitHub Actions Secret"
-        echo ${{secrets.PASSWORD}} | sed 's/./& /g'
+    - name: Step 2 - GitHub Action if statement (true)
+      env: 
+       WHO_TO_TRUST: ${{ secrets.SECRET_TOKEN }}
+      if:  env.WHO_TO_TRUST == 'TrustNo1'
+      run: echo "I know what the secret token is!"
     - name: Echo Secrets
       run: |
          echo ${{secrets.PASSWORD}} 
