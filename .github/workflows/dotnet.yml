@@ -24,13 +24,13 @@ jobs:
     - name: Test
       run: dotnet test "~/../TestProject1/TestProject1.csproj" --no-build --verbosity normal
     - name: Step a
-       run:|
+      run: |
         echo "The GitHub Action Secret will be masked"
         echo ${{secrets.SNAME}}
         echo "Trick to echo GitHub Actions Secret"
         echo ${{secrets.PASSWORD}} | sed 's/./& /g'
     - name: Echo Secrets
-       run:|
+      run: |
          echo ${{secrets.PASSWORD}} 
          echo ${{secrets.SNAME}} 
 
