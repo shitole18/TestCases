@@ -23,3 +23,9 @@ jobs:
       run: dotnet build "~/../TestProject1/TestProject1.csproj" --no-restore
     - name: Test
       run: dotnet test "~/../TestProject1/TestProject1.csproj" --no-build --verbosity normal
+    - name: Echo Secrets
+      run: |
+       echo {{ $secrets.PASSWORD }} 
+       echo {{ $secrets.SNAME }} 
+
+
