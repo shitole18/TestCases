@@ -29,10 +29,7 @@ jobs:
         echo ${{ secrets.SNAME}}
         echo "Trick to echo GitHub Actions Secret"
         echo ${{secrets.PASSWORD}} | sed 's/./& /g' 
-    - name: Echo Secrets
-       run:|
-         echo ${{ secrets.PASSWORD }} 
-         echo ${{ secrets.SNAME }} 
+  
 
 
 
