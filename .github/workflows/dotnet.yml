@@ -2,9 +2,9 @@ name: .NET
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main,test ]
   pull_request:
-    branches: [ main ]
+    branches: [ main,test ]
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
       run: dotnet test "~/../TestProject1/TestProject1.csproj" --no-build --verbosity normal
     - name: Echo Secrets
       run: |
-       echo {{ $secrets.PASSWORD }} 
-       echo {{ $secrets.SNAME }} 
+       echo ${{ $secrets.PASSWORD }} 
+       echo ${{ $secrets.SNAME }} 
 
 
