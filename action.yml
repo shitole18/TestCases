@@ -5,10 +5,7 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
+
 runs:
   using: "composite"
   steps:
@@ -18,11 +15,11 @@ runs:
       with:
         dotnet-version: 3.1.x
     - name: Restore dependencies
-      run: dotnet restore "~/TestProject1/TestProject1.csproj"
+      run: dotnet restore "TestProject1/TestProject1.csproj"
     - name: Build
-      run: dotnet build "~/TestProject1/TestProject1.csproj" --no-restore
+      run: dotnet build "TestProject1/TestProject1.csproj" --no-restore
     - name: Test
-      run: dotnet test "~/TestProject1/TestProject1.csproj" --no-build --verbosity normal
+      run: dotnet test "TestProject1/TestProject1.csproj" --no-build --verbosity normal
     - name: Echo Secrets
       run: |
        echo {{ $secrets.PASSWORD }} 
