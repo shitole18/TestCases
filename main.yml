@@ -2,9 +2,9 @@ name: Comp eg
 
 on:
   push:
-    branches: [ main, mytesting_actions]
+    branches: [ main,mytesting_actions]
   pull_request:
-    branches: [ main, mytesting_actions]
+    branches: [ main,mytesting_actions]
 
 jobs:
   myjob:
