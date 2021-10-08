@@ -14,13 +14,4 @@ runs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.x
-    - name: Restore dependencies
-      run: dotnet restore "TestProject1/TestProject1.csproj"
-    - name: Build
-      run: dotnet build "TestProject1/TestProject1.csproj" --no-restore
-    - name: Test
-      run: dotnet test "TestProject1/TestProject1.csproj" --no-build --verbosity normal
-    - name: Echo Secrets
-      run: |
-       echo {{ $secrets.PASSWORD }} 
-       echo {{ $secrets.SNAME }} 
+ 
