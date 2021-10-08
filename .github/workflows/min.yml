@@ -10,11 +10,11 @@ jobs:
   hello_world_job:
     runs-on: ubuntu-latest
     name: A job to say hello
-    steps:
-      - uses: actions/checkout@v2
-      - id: foo
-        uses: shitole18/TestCases@v1
-        with:
+    steps: 
+     - uses: actions/checkout@v1
+     - name: My first step
+       uses: ./action
+       with:
           who-to-greet: 'Mona the Octocat'
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash
+     - run: echo random-number ${{ steps.foo.outputs.random-number }}
+       shell: bash
