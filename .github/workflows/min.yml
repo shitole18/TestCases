@@ -5,16 +5,16 @@ on:
     branches: [ main,mytesting_actions]
   pull_request:
     branches: [ main,mytesting_actions]
-
+    
 jobs:
-  myjob:
-   runs-on: ubuntu-latest
-   name: a job that say hi.
-   steps:
-   - uses: actions/checkout@v2
-   - id: rahulshitole
-     uses: shitole18/TestCases@v1
-     with:
-      HiName: 'Rahul'
-   - run: echo 'rahul his'
-     shell: bash
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - uses: actions/checkout@v2
+      - id: foo
+        uses: shitole18/TestCases@v1
+        with:
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
