@@ -1,6 +1,10 @@
 name: Comp eg
 
-on: [workflow_dispatch]
+on:
+  push:
+    branches: [ main, mytesting_actions]
+  pull_request:
+    branches: [ main, mytesting_actions]
 
 jobs:
   myjob:
