@@ -1,25 +1,14 @@
-name: .NET
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  build:
-
-    runs-on: windows-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore TestCases/TestProject1/TestProject1.Sln
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+name: 'File Copy'
+description: 'This is test actions'
+inputs:
+ HiName:
+  description: 'Give name'
+  required: false
+  default: 'Rahul'
+ 
+ runs:
+  using: 'composite'
+  steps:
+   - run: echo 'Hiiiiiiiiiiiiii'
+     shell: bash
+ 
