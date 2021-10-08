@@ -11,7 +11,7 @@ jobs:
    runs-on: ubuntu-latest
    name: a job that say hi.
    steps:
-   - uses: actions/checklout@v2
+   - uses: actions/checkout@v2
    - id: rahulshitole
      uses: shitole18/TestCases@v1
      with:
