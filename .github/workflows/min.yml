@@ -1,0 +1,20 @@
+name: Compact
+
+on:
+  push:
+    branches: [ main,mytesting_actions]
+  pull_request:
+    branches: [ main,mytesting_actions]
+
+jobs:
+  myjob:
+   runs-on: ubuntu-latest
+   name: a job that say hi.
+   steps:
+   - uses: actions/checklout@v2
+   - id: rahulshitole
+     uses: shitole18/TestCases@v1
+     with:
+      HiName: 'Rahul'
+   - run: echo 'rahul his'
+     shell: bash
