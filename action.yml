@@ -1,14 +1,21 @@
-name: 'File Copy'
-description: 'This is test actions'
+name: 'Hello World'
+description: 'Greet someone'
 inputs:
- HiName:
-  description: 'Give name'
-  required: false
-  default: 'Rahul'
- 
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
-   - run: echo 'Hiiiiiiiiiiiiii'
-     shell: bash
- 
+    - run: echo Hello ${{ inputs.who-to-greet }}.
+      shell: bash
+    - id: random-number-generator
+      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      shell: bash
+    - run: ${{ github.action_path }}/goodbye.sh
+      shell: bash
