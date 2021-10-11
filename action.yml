@@ -17,4 +17,11 @@ runs:
     - name: Restore dependencies
       run: dotnet restore "./TestProject1/TestProject1.csproj"
       shell: bash
+    - name: Build
+      run: dotnet build "./TestProject1/TestProject1.csproj" --no-restore
+      shell: bash
+    - name: Restore dependencies
+      run: dotnet test "./TestProject1/TestProject1.csproj" --no-build --verbosity normal
+      shell: bash
+      
       
