@@ -18,3 +18,15 @@ jobs:
       HiName: 'Rahul'
    - run: echo 'rahul his'
      shell: bash
+   - id: rahulshitole2
+     uses: shitole18/TestCases@v1
+     with:
+      HiName: 'Rahul'
+   - run: echo 'rahul his'
+     shell: bash
+   - id: rahulshitole3
+     uses: shitole18/TestCases@v1
+     with:
+      HiName: 'Rahul'
+   - run: echo 'rahul his'
+     shell: bash
