@@ -1,8 +1,8 @@
 name: 'Hello World'
 description: 'Greet someone'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  MYNAME:  # id of input
+    description: 'MYNAME'
     required: true
     default: 'World'
 
@@ -20,6 +20,8 @@ runs:
     - name: Build
       run: dotnet build "./TestProject1/TestProject1.csproj" --no-restore
       shell: bash
-    - name: Restore dependencies
+      env:
+        MY_NAME: ${{ inputs.MYNAME }}
+    - name: Test
       run: dotnet test "./TestProject1/TestProject1.csproj" --no-build --verbosity normal
       shell: bash

@@ -14,8 +14,9 @@ namespace TestProject1
         [Test]
         public void Test1()
         {
-            string name = _name;
+            string name = Environment.GetEnvironmentVariable("MY_NAME", EnvironmentVariableTarget.Process);
             Assert.AreEqual(name, "rahul");
+             
         }
     }
 }
