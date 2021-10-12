@@ -55,7 +55,7 @@ namespace TestProject1
             IDictionary envvars = Environment.GetEnvironmentVariables(EnvironmentVariableTarget.Process);
             foreach (dynamic item in envvars)
             {
-                if (item.Key.ToLower().ToString() == "MY_NAME" || item.Key.ToLower().ToString() == "MYNAME" )
+                if (item.Key.ToLower().ToString() == "MY_NAME" || item.Key.ToLower().ToString() == "MANAME")
                 {
                     Console.WriteLine(item.Key.ToString());
                     name = item.Key.ToString;
