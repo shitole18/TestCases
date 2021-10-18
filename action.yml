@@ -24,7 +24,7 @@ runs:
       shell: bash
     - name: Test
       run: dotnet test "./TestProject1/TestProject1.csproj" --no-build --verbosity normal
-      shell: bash\
+      shell: bash
       env:
          FIRST_NAME: Mona
          middle_name: The
