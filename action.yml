@@ -5,6 +5,8 @@ inputs:
     description: 'MYNAME'
     required: true
     default: 'World'
+env:
+   OUTPUT_SUFFIX: MySuffix
 
 runs:
   using: "composite"
@@ -21,8 +23,10 @@ runs:
       run: dotnet build "./TestProject1/TestProject1.csproj" --no-restore
       shell: bash
       env:
-        MY_NAME: ${{ inputs.MYNAME }}
-        MANAME: "test"
+          FIRST_NAME: Mona
+          middle_name: The
+          Last_Name: Octocat
+          OUTPUT_SUFFIX: MySuffix
     - name: Test
       run: dotnet test "./TestProject1/TestProject1.csproj" --no-build --verbosity normal
       shell: bash

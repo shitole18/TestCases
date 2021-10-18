@@ -5,11 +5,16 @@ on:
     branches: [ main,mytesting_actions]
   pull_request:
     branches: [ main,mytesting_actions]
-    
+
+env:
+   OUTPUT_SUFFIX: MySuffix
+
 jobs:
   hello_world_job:
     runs-on: windows-latest
     name: CompositeAction Demo
+    env:
+       OUTPUT_SUFFIX: MySuffix
     steps: 
      - uses: actions/checkout@v1
      - name: My first step
