@@ -29,4 +29,4 @@ runs:
          FIRST_NAME: ${{ inputs.MYNAME }}
          middle_name: The
          Last_Name: Octocat
-         OUTPUT_SUFFIX: Runwala
+         OUTPUT_SUFFIX: ${{ inputs.MYNAME }}
