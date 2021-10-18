@@ -6,7 +6,7 @@ inputs:
     required: true
     default: 'World'
 env:
-   OUTPUT_SUFFIX: MySuffix
+   OUTPUT_SUFFIX: actiowala
 
 runs:
   using: "composite"
@@ -22,11 +22,11 @@ runs:
     - name: Build
       run: dotnet build "./TestProject1/TestProject1.csproj" --no-restore
       shell: bash
-      env:
-          FIRST_NAME: Mona
-          middle_name: The
-          Last_Name: Octocat
-          OUTPUT_SUFFIX: MySuffix
     - name: Test
       run: dotnet test "./TestProject1/TestProject1.csproj" --no-build --verbosity normal
-      shell: bash
+      shell: bash\
+      env:
+         FIRST_NAME: Mona
+         middle_name: The
+         Last_Name: Octocat
+         OUTPUT_SUFFIX: Runwala
