@@ -21,7 +21,7 @@ jobs:
           MYNAME: 'rahul'
     steps: 
      - uses: actions/checkout@v1
-     - name: My first step
+     - name: My second step
        uses: ./.github\workflows/
        with:
           MYNAME: 'sujay'
