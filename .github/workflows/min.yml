@@ -13,11 +13,15 @@ jobs:
   hello_world_job:
     runs-on: windows-latest
     name: CompositeAction Demo
-    env:
-       OUTPUT_SUFFIX: MySuffixjobwala
     steps: 
      - uses: actions/checkout@v1
      - name: My first step
        uses: ./
        with:
           MYNAME: 'rahul'
+    steps: 
+     - uses: actions/checkout@v1
+     - name: My first step
+       uses: .github\workflows\action.yml
+       with:
+          MYNAME: 'sujay'

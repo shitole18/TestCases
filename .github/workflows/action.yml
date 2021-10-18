@@ -1,0 +1,32 @@
+name: 'Hello World'
+description: 'Greet someone'
+inputs:
+  MYNAME:  # id of input
+    description: 'MY NAME'
+    required: true
+    default: 'World'
+env:
+   OUTPUT_SUFFIX: actiowala
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+    - name: Restore dependencies
+      run: dotnet restore "./TestProject1/TestProject1.csproj"
+      shell: bash
+    - name: Build
+      run: dotnet build "./TestProject1/TestProject1.csproj" --no-restore
+      shell: bash
+    - name: Test
+      run: dotnet test "./TestProject1/TestProject1.csproj" --no-build --verbosity normal
+      shell: bash
+      env:
+         FIRST_NAME: ${{ inputs.MYNAME }}
+         middle_name: The
+         Last_Name: Octocat
+         OUTPUT_SUFFIX: ${{ inputs.MYNAME }}
