@@ -19,7 +19,6 @@ jobs:
        uses: ./
        with:
           MYNAME: 'rahul'
-    steps: 
      - uses: actions/checkout@v1
      - name: My second step
        uses: ./.github\workflows/
