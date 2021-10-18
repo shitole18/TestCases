@@ -17,7 +17,7 @@ namespace TestProject1
         public void Test1()
         {
 
-            string name = Environment.GetEnvironmentVariable("FIRST_NAME", EnvironmentVariableTarget.Process); 
+            string name = Environment.GetEnvironmentVariable("OUTPUT_SUFFIX", EnvironmentVariableTarget.Process); 
             Assert.AreEqual("rahul", name.ToString());
 
         }
@@ -28,7 +28,7 @@ namespace TestProject1
             IDictionary envvars = Environment.GetEnvironmentVariables(EnvironmentVariableTarget.Process);
             foreach (dynamic item in envvars)
             {
-                if (item.Key.ToLower().ToString() == "middle_name" || item.Key.ToLower().ToString() == "MYNAME")
+                if (item.Key.ToUpper().ToString() == "OUTPUT_SUFFIX" || item.Key.ToLower().ToString() == "outut_suffix")
                 {
                     Console.WriteLine(item.Key.ToString());
                     name = item.Key.ToString;
@@ -37,22 +37,6 @@ namespace TestProject1
             Assert.AreEqual("rahul", name.ToString());
 
         }
-        [Test]
-        public void Test2()
-        {
-
-            string name = Environment.GetEnvironmentVariable("FIRST_NAME", EnvironmentVariableTarget.Process);
-            IDictionary envvars = Environment.GetEnvironmentVariables(EnvironmentVariableTarget.Process);
-            foreach (dynamic item in envvars)
-            {
-                if (item.Key.ToLower().ToString() == "MY_NAME" || item.Key.ToLower().ToString() == "MANAME")
-                {
-                    Console.WriteLine(item.Key.ToString());
-                    name = item.Key.ToString;
-                }
-            }
-            Assert.AreEqual("rahul", name.ToLower());
-
-        }
+       
     }
 }
